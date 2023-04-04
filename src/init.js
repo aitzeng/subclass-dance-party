@@ -16,18 +16,50 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    console.log(dancer);
+    // console.log(dancer.$node)
     $('body').append(dancer.$node);
+    window.dancers.push(dancer.$node);
+    console.log(window.dancers);
   });
+
+  $(".LineUpLeft").on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      var dancer = window.dancers[i];
+      dancer.offSetLeft = 5;
+    }
+  });
+
+
+  // ****** THIS IS THE ONE WE ARE ADDING BELOW *******
+  // $('.addPopDancerButton').on('click', function(event) {
+
+  //   var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
+  //   // get the maker function for the kind of dancer we're supposed to make
+  //   var dancerMakerFunction = window[dancerMakerFunctionName];
+
+  //   // make a dancer with a random position
+
+  //   var dancer = new dancerMakerFunction(
+  //     $("body").height() * Math.random(),
+  //     $("body").width() * Math.random(),
+  //     Math.random() * 1000
+  //   );
+  //   $('body').append(dancer.$node);
+  // });
+  // ******* END OF WHAT WE ADDED *************
+
+
 });
 
