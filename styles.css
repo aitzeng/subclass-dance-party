@@ -1,11 +1,15 @@
 body, html{
   height:100%;
+
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url(src/images/Dance_Floor.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
   font-size: 18px;
 }
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -24,4 +28,17 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+#poppa {
+  /* background-image: url(./src/images/PapaSmurfDance.png); */
+  border: solid;
+  height: 175px;
+  width: 90px;
+  /* background-position-x: -150px;
+  background-position-y: -185px; */
+}
+
+.findPartner{
+  margin-left: 15px;
 }
