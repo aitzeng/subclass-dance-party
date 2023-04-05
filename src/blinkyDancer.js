@@ -1,10 +1,9 @@
 
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-
-
+  this.$node = $('<img class="dancer" id="poppa" src="src/images/PapaSmurfDance.png"></img>');
+  this.setPosition(top, left);
 };
-
 
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
